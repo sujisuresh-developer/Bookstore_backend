@@ -192,8 +192,8 @@ exports.makeBookPaymentController = async (req, res) => {
 
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
-            success_url: 'http://localhost:5173/payment-success',
-            cancel_url: 'http://localhost:5173/payment-error',
+            success_url: 'https://bookstore-frontend-xi-eight.vercel.app/payment-success',
+            cancel_url: 'https://bookstore-frontend-xi-eight.vercel.app/payment-error',
             line_items,
             payment_method_types:['card']
         });
